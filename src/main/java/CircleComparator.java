@@ -1,9 +1,10 @@
-public class CircleComparator implements Comparator{
+import java.util.Comparator;
+
+public class CircleComparator implements Comparator<Circle> {
     @Override
-    public boolean compare(Circle c1, Circle c2) {
-        boolean a = false;
-        if (c1.getRadius() > c2.getRadius()) {a = true;}
-        else a= false;
-        return a;
+    public int compare(Circle c1, Circle c2) {
+        if (c1.getRadius() > c2.getRadius()) {return 1;}
+        else if(c1.getRadius() < c2.getRadius()) {return -1;}
+        else return 0;
     }
 }
